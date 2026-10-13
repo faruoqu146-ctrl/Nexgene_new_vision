@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+      - ./mobile:/app/mobile
+      - ./scripts:/app/scripts
+      - ./knowledge:/app/knowledge
+    environment:
+      - PYTHONPATH=/app
