@@ -2,7 +2,9 @@
 
 ## Phase 12: the research core
 
-The Intelligence Engine's correlation scan has been replaced by a calibrated, auditable research engine (`backend/app/research/`). It is pure Python + NumPy, deterministic, has no I/O, and can be run on a CSV without the web stack (`python -m backend.app.research.cli demo`).
+The Intelligence Engine's correlation scan has been replaced by a calibrated, auditable research engine
+(`backend/app/research/`). It is pure Python + NumPy, deterministic, has no I/O, and can be run on a CSV
+without the web stack (`python -m backend.app.research.cli demo`).
 
 What the engine does that v0.1 could not:
 
@@ -36,3 +38,16 @@ API docs at http://localhost:8000/docs once the server is running.
 - `docs/` - phase design and validation reports
 - `knowledge/` - evidence schemas and example priors
 - `scripts/` - learning cycle and validation study helpers
+
+## Research engine entry points
+
+```python
+from backend.app.research import run_discovery, run_forecast, narrate
+# or CLI:
+# python -m backend.app.research.cli demo
+# python -m backend.app.research.cli scan --csv data.csv
+```
+
+## License / status
+
+Phase 12 research core. See docs for validation status and remaining work.
