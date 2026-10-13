@@ -1,0 +1,13 @@
+{
+  "_comment": "FORMAT EXAMPLE ONLY. The engine loads a priors file only when RESEARCH_PRIORS_PATH points at it, and it ignores every entry that is not review_status=reviewed AND has at least one citation. A reviewed prior acts only as a direction-concordance gate (an association that contradicts it cannot pass ERL-2 observationally). It never changes a p-value or effect estimate. Do not add medical claims here without a reviewer and citations.",
+  "priors": [
+    {
+      "exposure": "caffeine",
+      "outcome": "sleep_quality",
+      "expected_sign": -1,
+      "review_status": "unreviewed",
+      "citations": [],
+      "reviewer": null
+    }
+  ]
+}
