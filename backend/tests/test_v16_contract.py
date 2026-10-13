@@ -27,4 +27,4 @@ def test_v16_evidence_snapshots_are_persisted_with_hashes():
 
 def test_v16_learning_version_is_source_aware():
     assert 'MODEL_VERSION = "plb-1.1"' in WORKER
-    assert '"source_aware": True' in WORKER or '"source_aware": True' in WORKER or 'source_aware' in WORKER
+    assert '"source_aware": True' in WORKER
