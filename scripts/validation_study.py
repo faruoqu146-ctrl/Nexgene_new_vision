@@ -92,24 +92,50 @@ def summarise(out_dir: str) -> dict:
                    "by_setting": [{"setting": setting[k], "panels": c["panels"], "false_claim_rate": c["any_claim_erl2"] / c["panels"],
                                    "false_claim_rate_ci95": wilson(c["any_claim_erl2"], c["panels"]), "type1_per_candidate": c["nominal_p_le_05"] / c["candidates"]}
                                   for k, c in by.items()]}
-    # mixed + pair aggregation truncated for length - full script continues below in source
+    agg = collections.defaultdict(lambda: {"panels": 0, "cls": collections.Counter(), "str": collections.defaultdict(collections.Counter)})
+    for r in load("mixed"):
+        a = agg[r["setting"]["T"]]
+        a["panels"] += r["n_panels"]
+        for k, v in r["claims"].items():
+            a["cls"][k] += v
+        for s, v in r["power_by_strength"].items():
+            c = a["str"][s]
+            c["n"] += v["n_effects"]
+            c["erl2"] += v["detected_erl2"]
+            c["erl3"] += v["detected_erl3"]
+            c["sign"] += v["sign_correct"]
+    out["mixed"] = {}
+    for T, a in sorted(agg.items()):
+        c, claims = a["cls"], a["cls"]["claims_total"]
+        out["mixed"][T] = {
+            "panels": a["panels"], "claims": claims, "planted": c["planted"], "echo": c["echo"], "spurious": c["spurious"],
+            "spurious_fraction": c["spurious"] / max(1, claims), "spurious_fraction_ci95": wilson(c["spurious"], claims),
+            "mean_fdp_spurious": c["fdp_spurious_sum"] / a["panels"], "panels_with_spurious_rate": c["panels_with_spurious"] / a["panels"],
+            "erl3_total": c["erl3_total"], "erl3_correct_direction": c["erl3_planted_direction"], "erl3_wrong_direction": c["erl3_wrong_direction"],
+            "power": {s: {"n": q["n"], "erl2": q["erl2"] / q["n"], "erl2_ci95": wilson(q["erl2"], q["n"]), "erl3": q["erl3"] / q["n"],
+                          "sign_accuracy": q["sign"] / q["n"]} for s, q in sorted(a["str"].items(), key=lambda kv: float(kv[0]))}}
+    pa, ps = collections.defaultdict(lambda: {"n": 0, "rej": collections.defaultdict(lambda: [0.0, 0.0, 0.0])}), {}
+    for r in load("pair"):
+        s = r["settings"][0]
+        key = json.dumps(s["setting"], sort_keys=True)
+        ps[key] = s["setting"]
+        pa[key]["n"] += s["n_tests"]
+        for m, rates in s["rejection_rate_at_alpha_0.05_0.01_0.001"].items():
+            for i in range(3):
+                pa[key]["rej"][m][i] += rates[i] * s["n_tests"]
+    out["pairwise"] = [{"setting": ps[k], "n_tests": v["n"], "rates": {m: [x / v["n"] for x in rs] for m, rs in v["rej"].items()}} for k, v in pa.items()]
     return out
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    sub = ap.add_subparsers(dest="cmd", required=True)
-    r = sub.add_parser("run")
-    r.add_argument("--out", default="validation_runs")
-    r.add_argument("--budget", type=float, default=150.0)
-    sub.add_parser("report").add_argument("--out", default="validation_runs")
-    ns = ap.parse_args()
-    if ns.cmd == "run":
-        run(ns.out, ns.budget)
-    else:
-        print(json.dumps(summarise(ns.out), indent=2))
-    return 0
+def report(out_dir: str) -> None:
+    s = summarise(out_dir)
+    print(json.dumps(s, indent=1, default=str))
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("cmd", choices=["run", "report"])
+    ap.add_argument("--out", default="validation_runs")
+    ap.add_argument("--budget", type=float, default=1e9)
+    a = ap.parse_args()
+    run(a.out, a.budget) if a.cmd == "run" else report(a.out)
