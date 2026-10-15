@@ -6,4 +6,5 @@ COPY backend /app/backend
 COPY mobile /app/mobile
 COPY scripts /app/scripts
 WORKDIR /app
-CMD ["uvicorn","backend.app.main:app","--host","0.0.0.0","--port","8000"]
+# Seed demo profile (no-op if already present), then serve the API.
+CMD ["sh", "-c", "python -m scripts.seed_average_profile; exec uvicorn backend.app.main:app --host 0.0.0.0 --port 8000"]
