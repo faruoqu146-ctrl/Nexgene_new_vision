@@ -41,7 +41,7 @@ Legend: PASS = verified with tests | PARTIAL = implemented, limited coverage | T
 | Grants user-scoped | PASS |
 | Provider routes closed without key | PASS |
 | Full provider sync integration tests | PARTIAL (needs CLINICAL_PROVIDER_KEY) |
-| Genomic dual-auth parity tests | TODO |
+| Genomic dual-auth parity tests | PASS |
 
 ## What NexGene can do now
 - Lifestyle collection, consent, baselines, coverage gating
@@ -54,3 +54,13 @@ Legend: PASS = verified with tests | PARTIAL = implemented, limited coverage | T
 - Clinical/diagnostic use or validated treatment predictions
 - Secondary research data release pipelines
 - Full genomic provider integration test coverage
+
+## Operational repairs (Directive 01)
+| Item | Status |
+|------|--------|
+| Demo seed blocked without DEV_MODE/ALLOW_DEMO_SEED | PASS |
+| Dockerfile does not unconditionally seed | PASS |
+| Clinical DB URL on shared volume in Compose | PASS |
+| Genomic dual-auth parity tests | PASS |
+| Full pytest suite continuous CI | TODO |
+| Provider-key E2E dual-auth sync tests | PARTIAL |
