@@ -21,30 +21,36 @@ Legend: PASS = verified with tests | PARTIAL = implemented, limited coverage | T
 ## Phase 2 — Lifestyle intelligence
 | Item | Status |
 |------|--------|
-| Check-in ingestion + provenance links | PASS |
+| Check-in ingestion + provenance | PASS |
 | Canonical observation fields | PASS |
-| Purpose-specific consent model + API | PASS |
-| Default lifestyle consent (collect + personal_insight) | PASS |
+| Purpose-specific consent API | PASS |
 | Collect required for check-in | PASS |
-| Personal_insight required for engine run | PASS |
-| Personal_insight required for research brief | PASS |
-| Descriptive baselines endpoint | PASS |
-| Coverage / lifestyle_layer_ready gate | PASS |
-| Multi-day baseline readiness (7+ days) | PASS (criterion) |
-| Research secondary-use (PURPOSE_RESEARCH) enforcement | TODO |
-| Cross-domain combination gate | TODO |
-| UI surfaces for uncertainty / null results | TODO |
+| Personal_insight for engine + research brief | PASS |
+| Descriptive baselines + coverage gate | PASS |
+| Secondary research denied by default | PASS |
+| Cross-domain required for clinical+lifestyle combine | PASS |
 | Clinical validation of lifestyle layer | NOT CLAIMED |
 
+## Phase 3 — Clinical compartment (in progress)
+| Item | Status |
+|------|--------|
+| Separate clinical store | PASS |
+| Dual authorization (user + provider) | PASS |
+| User consent alone insufficient | PASS |
+| Records empty without dual auth | PASS |
+| Grants user-scoped | PASS |
+| Provider routes closed without key | PASS |
+| Full provider sync integration tests | PARTIAL (needs CLINICAL_PROVIDER_KEY) |
+| Genomic dual-auth parity tests | TODO |
+
 ## What NexGene can do now
-- Collect lifestyle check-ins with provenance and consent
-- Grant/revoke purpose-specific consent
-- Run personal association analysis under ERL gates when consent allows
-- Report descriptive personal baselines without clinical claims
-- Report lifestyle_layer_ready for product gating
+- Lifestyle collection, consent, baselines, coverage gating
+- Personal association analysis under ERL with calibrated nulls
+- Clinical dual-auth compartment (separate DB)
+- Explicit denial of secondary research and cross-domain combine without purpose grants
 
 ## What NexGene cannot yet claim
-- Causal effects from observational lifestyle data alone
-- Clinical or diagnostic use
-- Validated predictive models for treatment decisions
-- Secondary research reuse without explicit PURPOSE_RESEARCH grant
+- Causal inference from observational data alone
+- Clinical/diagnostic use or validated treatment predictions
+- Secondary research data release pipelines
+- Full genomic provider integration test coverage
