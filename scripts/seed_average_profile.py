@@ -1,7 +1,14 @@
 """Seed an average-person demo account with 90 consecutive days of check-ins.
 
+DEVELOPMENT ONLY.
 Safe to call multiple times: if the demo email already exists, it is left unchanged.
-Invoked automatically from backend.app.main after DB migrations when the demo user is missing.
+
+Must never run under production configuration:
+  - Requires DEV_MODE=true or ALLOW_DEMO_SEED=true
+  - Refuses otherwise with status=refused
+  - Credentials are not printed when DEV_MODE is false
+
+Synthetic records are tagged as demo/synthetic in source metadata.
 """
 from __future__ import annotations
 
@@ -109,16 +116,14 @@ def _round1(x: float) -> float:
 
 def _generate_day(rng: random.Random, day_index: int, weekday: int, prev_sleep: float) -> dict[str, float | str]:
     """Synthetic but plausible 'average adult' daily signals with mild structure."""
-    # Weekday stress bump (Mon=0 … Sun=6)
     workday = weekday < 5
     stress_base = 5.2 if workday else 3.8
-    if weekday == 0:  # Monday
+    if weekday == 0:
         stress_base += 0.8
-    if weekday == 4:  # Friday wind-down still busy
+    if weekday == 4:
         stress_base += 0.3
 
     sleep_duration = _clamp(rng.gauss(7.1 if workday else 7.8, 0.55), 5.0, 9.5)
-    # Short sleep mildly hurts next-day energy (use prev night)
     sleep_debt = max(0.0, 7.0 - prev_sleep)
     energy = _clamp(rng.gauss(6.3 - 0.35 * sleep_debt, 1.0), 2.0, 10.0)
     sleep_quality = _clamp(rng.gauss(6.5 + 0.25 * (sleep_duration - 7.0), 1.1), 2.0, 10.0)
@@ -141,12 +146,10 @@ def _generate_day(rng: random.Random, day_index: int, weekday: int, prev_sleep: 
         morning_context = "skipped"
 
     return {
-        # morning
         "sleep_duration": _round1(sleep_duration),
         "sleep_quality": _round1(sleep_quality),
         "energy": _round1(energy),
         "morning_context": morning_context,
-        # evening
         "mood": _round1(mood),
         "stress": _round1(stress),
         "focus": _round1(focus),
@@ -159,13 +162,24 @@ def _generate_day(rng: random.Random, day_index: int, weekday: int, prev_sleep: 
 
 
 def ensure_average_demo() -> dict:
-    """Create the demo user + profile + 90 days of observations if missing."""
+    """Create the demo user + profile + 90 days of observations if missing.
+
+    Development-only. Refuses when production-like configuration is active.
+    """
+    dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
+    allow = os.getenv("ALLOW_DEMO_SEED", "false").lower() == "true"
+    if not dev_mode and not allow:
+        return {
+            "status": "refused",
+            "reason": "Demo seeding is disabled unless DEV_MODE=true or ALLOW_DEMO_SEED=true",
+        }
     database_url = os.getenv("DATABASE_URL", "sqlite:///./nexgene.db")
     engine = create_engine(
         database_url,
         connect_args={"check_same_thread": False} if database_url.startswith("sqlite") else {},
     )
     SessionLocal = sessionmaker(bind=engine)
+    Base.metadata.create_all(engine)
     s: Session = SessionLocal()
     try:
         existing = s.scalar(select(User).where(User.email == DEMO_EMAIL))
@@ -204,13 +218,13 @@ def ensure_average_demo() -> dict:
             label="NexGene check-ins",
             status="active",
             reliability="self_reported",
-            metadata_json=json.dumps({"periods": ["morning", "evening"], "seed": "average_person_v1"}),
+            metadata_json=json.dumps({"periods": ["morning", "evening"], "seed": "average_person_v1", "synthetic": True, "demo": True}),
             created_at=now - timedelta(days=DAYS),
         )
         s.add(source)
         s.flush()
 
-        rng = random.Random(20261015)  # deterministic demo series
+        rng = random.Random(20261015)
         prev_sleep = 7.0
         start = (now - timedelta(days=DAYS - 1)).replace(hour=0, minute=0, second=0, microsecond=0)
         obs_count = 0
@@ -226,14 +240,8 @@ def ensure_average_demo() -> dict:
 
             morning_kinds = ("sleep_duration", "sleep_quality", "energy", "morning_context")
             evening_kinds = (
-                "mood",
-                "stress",
-                "focus",
-                "activity_level",
-                "diet_quality",
-                "caffeine",
-                "alcohol",
-                "nicotine",
+                "mood", "stress", "focus", "activity_level",
+                "diet_quality", "caffeine", "alcohol", "nicotine",
             )
 
             for kinds, when in ((morning_kinds, morning_at), (evening_kinds, evening_at)):
@@ -286,8 +294,9 @@ def ensure_average_demo() -> dict:
 
 if __name__ == "__main__":
     result = ensure_average_demo()
-    # Never print password in shared CI logs when already exists
-    if result.get("status") == "created":
+    dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
+    safe = {k: v for k, v in result.items() if k != "password"}
+    if result.get("status") == "created" and dev_mode:
         print(json.dumps(result))
     else:
-        print(json.dumps({k: v for k, v in result.items() if k != "password"}))
+        print(json.dumps(safe))
