@@ -6,5 +6,6 @@ COPY backend /app/backend
 COPY mobile /app/mobile
 COPY scripts /app/scripts
 WORKDIR /app
-# Seed demo profile (no-op if already present), then serve the API.
-CMD ["sh", "-c", "python -m scripts.seed_average_profile; exec uvicorn backend.app.main:app --host 0.0.0.0 --port 8000"]
+# Demo seed runs only when DEV_MODE=true (or ALLOW_DEMO_SEED=true is set by the seed script guards).
+# Production containers must not auto-create demonstration accounts.
+CMD ["sh", "-c", "if [ \"${DEV_MODE}\" = \"true\" ] || [ \"${ALLOW_DEMO_SEED}\" = \"true\" ]; then python -m scripts.seed_average_profile; else echo 'Skipping demo seed (production-safe startup)'; fi; exec uvicorn backend.app.main:app --host 0.0.0.0 --port 8000"]

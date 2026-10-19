@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
     environment:
       DATABASE_URL: sqlite:////data/nexgene.db
+      CLINICAL_DATABASE_URL: sqlite:////data/nexgene_clinical.db
       SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY to a strong random value before starting NexGene}
       DEV_MODE: ${DEV_MODE:-false}
       COOKIE_SECURE: ${COOKIE_SECURE:-true}
