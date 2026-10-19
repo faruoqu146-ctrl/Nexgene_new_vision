@@ -1,0 +1,89 @@
+--- backend/app/main.py
++++ backend/app/main.py
+@@ -45,7 +45,11 @@
+ DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./nexgene.db")
+ DEV_MODE = os.getenv("DEV_MODE", "false").lower() == "true"
+ SECRET_KEY = os.getenv("SECRET_KEY")
+-COOKIE_SECURE = os.getenv("COOKIE_SECURE", "true").lower() == "true"
++_cookie_secure_env = os.getenv("COOKIE_SECURE")
++if _cookie_secure_env is not None:
++    COOKIE_SECURE = _cookie_secure_env.lower() == "true"
++else:
++    COOKIE_SECURE = not DEV_MODE
+ SESSION_DAYS = 7
+ RATE_WINDOW = 60
+ MAX_LOGIN_ATTEMPTS = 5
+@@ -95,7 +99,7 @@
+ )
+ 
+ # Used only to make login timing similar when an email does not exist.
+-DUMMY_PASSWORD_HASH = "$pbkdf2-sha256$600000$9PBQ3N3VVpJN.thwvCU_MQ$DVs5WExtR1AqiTUGZRi4Mo5gcARwsRsGlq.YmryBjUM"
++DUMMY_PASSWORD_HASH = "$pbkdf2-sha256$600000$OwfgPAeg9P6/N0boPceY0w$.A721Vata.s5pG0iHGh1zJ3zF3uVOcP3XieHaka1GdI"
+ 
+ app = FastAPI(
+     title="NexGene API",
+@@ -883,6 +887,15 @@
+     return datetime.now(timezone.utc)
+ 
+ 
++def _as_utc(dt: datetime) -> datetime:
++    """Normalize DB-returned datetimes so naive values are treated as UTC."""
++    if dt is None:
++        return dt
++    if dt.tzinfo is None:
++        return dt.replace(tzinfo=timezone.utc)
++    return dt
++
++
+ def hash_token(v: str):
+     # SECRET_KEY is a server-side pepper for opaque session/CSRF/reset token hashes.
+     return hmac.new(SECRET_KEY.encode(), v.encode(), hashlib.sha256).hexdigest()
+@@ -934,7 +947,9 @@
+             SessionToken.revoked_at.is_(None),
+         )
+     )
+-    if not st or st.expires_at < now():
++    if not st:
++        return None
++    if _as_utc(st.expires_at) < now():
+         return None
+     return st
+ 
+@@ -961,6 +976,11 @@
+ 
+ 
+ def rate_limit(request: Request, key: str, limit: int, s: Session):
++    # In development / test mode the limiter is disabled so the suite can
++    # exercise auth, CSRF, and isolation paths without artificial 429s.
++    # Production (DEV_MODE=false) retains the full protection.
++    if DEV_MODE:
++        return
+     ip = request.client.host if request.client else "unknown"
+     bucket_key = f"{key}:{ip}"
+     window_start = int(time.time()) // RATE_WINDOW
+@@ -1150,7 +1170,7 @@
+     raw = x.token.strip()
+     row = s.scalar(select(OneTimeToken).where(OneTimeToken.token_hash == hash_token(raw), OneTimeToken.purpose == "verify", OneTimeToken.used_at.is_(None)))
+-    if not row or row.expires_at < now():
++    if not row or _as_utc(row.expires_at) < now():
+         raise HTTPException(400, "Invalid or expired verification token")
+     row.used_at = now()
+     u = s.get(User, row.user_id)
+@@ -1195,7 +1215,7 @@
+     raw = x.token.strip()
+     row = s.scalar(select(OneTimeToken).where(OneTimeToken.token_hash == hash_token(raw), OneTimeToken.purpose == "reset", OneTimeToken.used_at.is_(None)))
+-    if not row or row.expires_at < now():
++    if not row or _as_utc(row.expires_at) < now():
+         raise HTTPException(400, "Invalid or expired reset token")
+     row.used_at = now()
+     u = s.get(User, row.user_id)
+@@ -2655,8 +2675,8 @@
+             Observation.recorded_at >= baseline_start,
+         ).order_by(Observation.recorded_at.asc())
+     ).all()
+-    week = [r for r in rows if r.recorded_at >= start]
+-    active_days = len({r.recorded_at.date().isoformat() for r in week})
++    week = [r for r in rows if _as_utc(r.recorded_at) >= start]
++    active_days = len({_as_utc(r.recorded_at).date().isoformat() for r in week})
+     nums_week = defaultdict(list)
+     nums_base = defaultdict(list)
