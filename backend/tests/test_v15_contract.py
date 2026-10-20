@@ -6,7 +6,7 @@ README = (ROOT / "README.md").read_text()
 
 
 def test_v15_version_and_compartments():
-    assert 'APP_VERSION = "1.9.0"' in MAIN
+    assert 'APP_VERSION = "1.9.3"' in MAIN
     assert "GENOMIC_DATABASE_URL" in MAIN
     assert "class GenomicVariant" in MAIN
     assert "class PolygenicScore" in MAIN

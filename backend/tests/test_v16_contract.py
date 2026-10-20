@@ -7,7 +7,7 @@ README = (ROOT / "README.md").read_text()
 
 
 def test_v16_living_baseline_and_fragmented_sources():
-    assert 'APP_VERSION = "1.9.0"' in MAIN
+    assert 'APP_VERSION = "1.9.3"' in MAIN
     assert "INTELLIGENCE_MODEL_VERSION = nre.MODEL_VERSION" in MAIN
     assert "class SourceRecord" in MAIN
     assert "class SourceDocument" in MAIN
