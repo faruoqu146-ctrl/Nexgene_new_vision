@@ -7,4 +7,4 @@ MAIN = ROOT / "backend" / "app" / "main.py"
 
 def test_v130_contract():
     main = MAIN.read_text()
-    assert 'APP_VERSION = "1.9.4"' in main
+    assert 'APP_VERSION = "1.9.6"' in main
