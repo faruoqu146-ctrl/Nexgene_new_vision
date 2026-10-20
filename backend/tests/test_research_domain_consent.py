@@ -42,7 +42,7 @@ def test_environmental_excluded_without_personal_insight():
     try:
         u = s.scalar(select(User).where(User.email == "panel-env@example.com"))
         assert u is not None
-        panel, rows, _ = _research_panel(u, s, window_days=30)
+        panel, rows, _, _meta = _research_panel(u, s, window_days=30)
         kinds = {r.kind for r in rows}
         assert "energy" in kinds or "stress" in kinds
         assert "air_quality_index" not in kinds
@@ -68,7 +68,7 @@ def test_environmental_included_with_personal_insight():
     s = SessionLocal()
     try:
         u = s.scalar(select(User).where(User.email == "panel-env-ok@example.com"))
-        panel, rows, _ = _research_panel(u, s, window_days=30)
+        panel, rows, _, _meta = _research_panel(u, s, window_days=30)
         kinds = {r.kind for r in rows}
         assert "pollen_index" in kinds
         assert "pollen_index" in panel.variables
