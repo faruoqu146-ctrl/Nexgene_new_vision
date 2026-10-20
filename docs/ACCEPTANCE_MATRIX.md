@@ -5,17 +5,17 @@ Legend: PASS = verified with tests | PARTIAL = implemented, limited coverage | T
 ## Suite status (Directive 01)
 | Item | Status |
 |------|--------|
-| `pytest backend/tests -q` | **203 passed** (verified 2026-10-20) |
+| `pytest backend/tests -q` | **206 passed** (verified 2026-10-20) |
 | Demo seed production refuse | PASS |
 | Dockerfile gated seed | PASS |
 | Clinical DB on volume | PASS |
 | Consent revoke blocks collect / personal_insight | PASS |
 | Cross-user timeline isolation | PASS |
 | Clinical + genomic dual-auth | PASS |
-| Continuous CI workflow | PASS (added; not yet observed on GH runners) |
-| validation_study.py full 57/57 re-run (2026-10-20) | PASS (synthetic) |
-| validation_study in CI (bounded budget) | PARTIAL (workflow added) |
-| Provider-key E2E sync | PARTIAL |
+| Provider-key E2E dual-auth sync | PASS |
+| Continuous CI workflow | PASS (added; confirm on GH Actions) |
+| validation_study.py full 57/57 re-run | PASS (synthetic) |
+| validation_study in CI (bounded budget) | PARTIAL |
 
 ## Phase 0 — Ground truth
 | Item | Status |
@@ -53,12 +53,12 @@ Legend: PASS = verified with tests | PARTIAL = implemented, limited coverage | T
 | Dual authorization (user + provider) | PASS |
 | Genomic dual-auth parity tests | PASS |
 | Provider routes closed without key | PASS |
-| Full provider sync integration tests | PARTIAL |
+| Full provider sync integration tests | PASS |
 
 ## What NexGene can do now
 - Lifestyle collection, consent, baselines, coverage gating
 - Personal association analysis under ERL with calibrated nulls
-- Clinical/genomic dual-auth compartments
+- Clinical/genomic dual-auth compartments with provider-key E2E sync path
 - Explicit denial of secondary research and cross-domain combine without purpose grants
 
 ## What NexGene cannot yet claim
