@@ -20,7 +20,7 @@ def _routes():
 
 
 def test_version_and_engine_wiring():
-    assert 'APP_VERSION = "1.9.0"' in MAIN
+    assert 'APP_VERSION = "1.9.3"' in MAIN
     assert "from . import research as nre" in MAIN and "INTELLIGENCE_MODEL_VERSION = nre.MODEL_VERSION" in MAIN
     assert "numpy" in REQ and "tzdata" in REQ
 
@@ -42,11 +42,9 @@ def test_every_intelligence_post_is_csrf_protected_and_every_route_requires_a_us
         if not path.startswith("/api/v1/intelligence/"):
             continue
         src = ast.get_source_segment(MAIN, node)
-        assert "current_user" in src, path                       # authenticated
+        assert "current_user" in src, path
         if method == "post":
-            assert "require_csrf(request, st)" in src, path      # CSRF-protected
-    for path in ("engine/run", "experiments\"", "analyze"):
-        pass
+            assert "require_csrf(request, st)" in src, path
     assert 'rate_limit(request, f"intelligence-engine:{u.id}", 3, s)' in MAIN
     assert 'rate_limit(request, f"experiment-create:{u.id}"' in MAIN and 'rate_limit(request, f"experiment-analyze:{u.id}"' in MAIN
 

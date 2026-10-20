@@ -1,6 +1,20 @@
-# NexGene Acceptance Matrix (2026-10-19)
+# NexGene Acceptance Matrix (2026-10-20)
 
 Legend: PASS = verified with tests | PARTIAL = implemented, limited coverage | TODO = not yet
+
+## Suite status (Directive 01)
+| Item | Status |
+|------|--------|
+| `pytest backend/tests -q` | **203 passed** (verified 2026-10-20) |
+| Demo seed production refuse | PASS |
+| Dockerfile gated seed | PASS |
+| Clinical DB on volume | PASS |
+| Consent revoke blocks collect / personal_insight | PASS |
+| Cross-user timeline isolation | PASS |
+| Clinical + genomic dual-auth | PASS |
+| Continuous CI | TODO |
+| validation_study.py re-run in CI | TODO |
+| Provider-key E2E sync | PARTIAL |
 
 ## Phase 0 — Ground truth
 | Item | Status |
@@ -31,36 +45,23 @@ Legend: PASS = verified with tests | PARTIAL = implemented, limited coverage | T
 | Cross-domain required for clinical+lifestyle combine | PASS |
 | Clinical validation of lifestyle layer | NOT CLAIMED |
 
-## Phase 3 — Clinical compartment (in progress)
+## Phase 3 — Compartments
 | Item | Status |
 |------|--------|
 | Separate clinical store | PASS |
 | Dual authorization (user + provider) | PASS |
-| User consent alone insufficient | PASS |
-| Records empty without dual auth | PASS |
-| Grants user-scoped | PASS |
-| Provider routes closed without key | PASS |
-| Full provider sync integration tests | PARTIAL (needs CLINICAL_PROVIDER_KEY) |
 | Genomic dual-auth parity tests | PASS |
+| Provider routes closed without key | PASS |
+| Full provider sync integration tests | PARTIAL |
 
 ## What NexGene can do now
 - Lifestyle collection, consent, baselines, coverage gating
 - Personal association analysis under ERL with calibrated nulls
-- Clinical dual-auth compartment (separate DB)
+- Clinical/genomic dual-auth compartments
 - Explicit denial of secondary research and cross-domain combine without purpose grants
 
 ## What NexGene cannot yet claim
 - Causal inference from observational data alone
 - Clinical/diagnostic use or validated treatment predictions
 - Secondary research data release pipelines
-- Full genomic provider integration test coverage
-
-## Operational repairs (Directive 01)
-| Item | Status |
-|------|--------|
-| Demo seed blocked without DEV_MODE/ALLOW_DEMO_SEED | PASS |
-| Dockerfile does not unconditionally seed | PASS |
-| Clinical DB URL on shared volume in Compose | PASS |
-| Genomic dual-auth parity tests | PASS |
-| Full pytest suite continuous CI | TODO |
-| Provider-key E2E dual-auth sync tests | PARTIAL |
+- Production deployment readiness (INTERNAL TEST ONLY)
