@@ -12,8 +12,9 @@ Legend: PASS = verified with tests | PARTIAL = implemented, limited coverage | T
 | Consent revoke blocks collect / personal_insight | PASS |
 | Cross-user timeline isolation | PASS |
 | Clinical + genomic dual-auth | PASS |
-| Continuous CI | TODO |
-| validation_study.py re-run in CI | TODO |
+| Continuous CI workflow | PASS (added; not yet observed on GH runners) |
+| validation_study.py full 57/57 re-run (2026-10-20) | PASS (synthetic) |
+| validation_study in CI (bounded budget) | PARTIAL (workflow added) |
 | Provider-key E2E sync | PARTIAL |
 
 ## Phase 0 — Ground truth
