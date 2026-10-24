@@ -1,0 +1,3324 @@
+{
+  "dataset_id": "nexgene-syn-student-30d",
+  "dataset_version": "1.0.0",
+  "generator_version": "syn-hist-gen-1.0.0",
+  "random_seed": 20261024,
+  "synthetic": true,
+  "scenario_id": "university_exam_stress_v1",
+  "subject_id": "SYN-STUDENT-001",
+  "subject_profile": {
+    "label": "Fictional university student (synthetic)",
+    "age_range": "18-24",
+    "occupation": "Student",
+    "student": true,
+    "study_field": "Computer science",
+    "timezone": "Africa/Lagos",
+    "country": "Nigeria"
+  },
+  "window": {
+    "start_date": "2026-09-24",
+    "end_date": "2026-10-23",
+    "days": 30
+  },
+  "missingness": {
+    "4": [
+      "morning"
+    ],
+    "8": [
+      "evening"
+    ],
+    "11": [
+      "evening"
+    ],
+    "17": [
+      "morning"
+    ],
+    "22": [
+      "evening"
+    ]
+  },
+  "observation_count": 328,
+  "records": [
+    {
+      "kind": "sleep_duration",
+      "value": 6.3,
+      "observed_at": "2026-09-24T07:32:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.3,
+      "observed_at": "2026-09-24T07:32:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.4,
+      "observed_at": "2026-09-24T07:32:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "headache",
+      "observed_at": "2026-09-24T07:32:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 5.2,
+      "observed_at": "2026-09-24T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 4.7,
+      "observed_at": "2026-09-24T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 6.1,
+      "observed_at": "2026-09-24T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.4,
+      "observed_at": "2026-09-24T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 4.6,
+      "observed_at": "2026-09-24T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.0,
+      "observed_at": "2026-09-24T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-09-24T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-09-24T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 0,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.5,
+      "observed_at": "2026-09-25T07:36:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 4.9,
+      "observed_at": "2026-09-25T07:36:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.2,
+      "observed_at": "2026-09-25T07:36:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-09-25T07:36:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.6,
+      "observed_at": "2026-09-25T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 2.4,
+      "observed_at": "2026-09-25T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 5.4,
+      "observed_at": "2026-09-25T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 4.4,
+      "observed_at": "2026-09-25T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.0,
+      "observed_at": "2026-09-25T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.2,
+      "observed_at": "2026-09-25T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-09-25T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-09-25T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 1,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.9,
+      "observed_at": "2026-09-26T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 7.3,
+      "observed_at": "2026-09-26T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.0,
+      "observed_at": "2026-09-26T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-09-26T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.3,
+      "observed_at": "2026-09-26T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 3.5,
+      "observed_at": "2026-09-26T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 6.6,
+      "observed_at": "2026-09-26T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 6.3,
+      "observed_at": "2026-09-26T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 7.4,
+      "observed_at": "2026-09-26T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.8,
+      "observed_at": "2026-09-26T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-09-26T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-09-26T21:30:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 2,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.8,
+      "observed_at": "2026-09-27T07:43:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 7.7,
+      "observed_at": "2026-09-27T07:43:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 5.7,
+      "observed_at": "2026-09-27T07:43:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-09-27T07:43:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 5.9,
+      "observed_at": "2026-09-27T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 2.6,
+      "observed_at": "2026-09-27T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 6.8,
+      "observed_at": "2026-09-27T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 7.3,
+      "observed_at": "2026-09-27T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.0,
+      "observed_at": "2026-09-27T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.1,
+      "observed_at": "2026-09-27T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-09-27T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-09-27T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 3,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.5,
+      "observed_at": "2026-09-28T21:47:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 4,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 4.1,
+      "observed_at": "2026-09-28T21:47:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 4,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 7.6,
+      "observed_at": "2026-09-28T21:47:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 4,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 3.8,
+      "observed_at": "2026-09-28T21:47:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 4,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 5.8,
+      "observed_at": "2026-09-28T21:47:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 4,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.1,
+      "observed_at": "2026-09-28T21:47:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 4,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-09-28T21:47:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 4,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-09-28T21:47:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 4,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.4,
+      "observed_at": "2026-09-29T07:23:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 6.3,
+      "observed_at": "2026-09-29T07:23:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 7.5,
+      "observed_at": "2026-09-29T07:23:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-09-29T07:23:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.9,
+      "observed_at": "2026-09-29T21:13:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 5.5,
+      "observed_at": "2026-09-29T21:13:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 4.4,
+      "observed_at": "2026-09-29T21:13:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 6.1,
+      "observed_at": "2026-09-29T21:13:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 4.8,
+      "observed_at": "2026-09-29T21:13:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.0,
+      "observed_at": "2026-09-29T21:13:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-09-29T21:13:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-09-29T21:13:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 5,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.6,
+      "observed_at": "2026-09-30T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 6.1,
+      "observed_at": "2026-09-30T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 5.8,
+      "observed_at": "2026-09-30T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-09-30T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.8,
+      "observed_at": "2026-09-30T21:29:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 3.7,
+      "observed_at": "2026-09-30T21:29:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 7.1,
+      "observed_at": "2026-09-30T21:29:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.6,
+      "observed_at": "2026-09-30T21:29:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 7.0,
+      "observed_at": "2026-09-30T21:29:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.1,
+      "observed_at": "2026-09-30T21:29:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-09-30T21:29:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-09-30T21:29:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 6,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.6,
+      "observed_at": "2026-10-01T07:45:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.0,
+      "observed_at": "2026-10-01T07:45:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 7.8,
+      "observed_at": "2026-10-01T07:45:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "headache",
+      "observed_at": "2026-10-01T07:45:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 6.3,
+      "observed_at": "2026-10-01T21:48:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 4.8,
+      "observed_at": "2026-10-01T21:48:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 5.9,
+      "observed_at": "2026-10-01T21:48:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 6.3,
+      "observed_at": "2026-10-01T21:48:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.6,
+      "observed_at": "2026-10-01T21:48:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.8,
+      "observed_at": "2026-10-01T21:48:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-01T21:48:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-01T21:48:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 7,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.7,
+      "observed_at": "2026-10-02T07:16:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 8,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 4.4,
+      "observed_at": "2026-10-02T07:16:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 8,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.3,
+      "observed_at": "2026-10-02T07:16:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 8,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "fatigue",
+      "observed_at": "2026-10-02T07:16:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 8,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.7,
+      "observed_at": "2026-10-03T07:33:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 6.7,
+      "observed_at": "2026-10-03T07:33:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.3,
+      "observed_at": "2026-10-03T07:33:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "headache",
+      "observed_at": "2026-10-03T07:33:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.2,
+      "observed_at": "2026-10-03T21:38:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 4.1,
+      "observed_at": "2026-10-03T21:38:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 6.5,
+      "observed_at": "2026-10-03T21:38:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.7,
+      "observed_at": "2026-10-03T21:38:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.4,
+      "observed_at": "2026-10-03T21:38:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.6,
+      "observed_at": "2026-10-03T21:38:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-03T21:38:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-03T21:38:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 9,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.8,
+      "observed_at": "2026-10-04T07:27:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.5,
+      "observed_at": "2026-10-04T07:27:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 7.0,
+      "observed_at": "2026-10-04T07:27:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-04T07:27:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.7,
+      "observed_at": "2026-10-04T21:35:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 2.7,
+      "observed_at": "2026-10-04T21:35:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 6.0,
+      "observed_at": "2026-10-04T21:35:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 8.0,
+      "observed_at": "2026-10-04T21:35:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 7.8,
+      "observed_at": "2026-10-04T21:35:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.6,
+      "observed_at": "2026-10-04T21:35:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-04T21:35:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-04T21:35:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 10,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.5,
+      "observed_at": "2026-10-05T07:16:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 11,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 8.0,
+      "observed_at": "2026-10-05T07:16:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 11,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.6,
+      "observed_at": "2026-10-05T07:16:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 11,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-05T07:16:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 11,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.6,
+      "observed_at": "2026-10-06T07:11:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.0,
+      "observed_at": "2026-10-06T07:11:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 7.4,
+      "observed_at": "2026-10-06T07:11:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-06T07:11:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.7,
+      "observed_at": "2026-10-06T21:44:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 3.4,
+      "observed_at": "2026-10-06T21:44:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 8.5,
+      "observed_at": "2026-10-06T21:44:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 6.9,
+      "observed_at": "2026-10-06T21:44:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.1,
+      "observed_at": "2026-10-06T21:44:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.2,
+      "observed_at": "2026-10-06T21:44:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-06T21:44:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-06T21:44:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 12,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.9,
+      "observed_at": "2026-10-07T07:17:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.9,
+      "observed_at": "2026-10-07T07:17:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 5.6,
+      "observed_at": "2026-10-07T07:17:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-07T07:17:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 6.4,
+      "observed_at": "2026-10-07T21:17:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 3.4,
+      "observed_at": "2026-10-07T21:17:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 8.1,
+      "observed_at": "2026-10-07T21:17:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 6.0,
+      "observed_at": "2026-10-07T21:17:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.8,
+      "observed_at": "2026-10-07T21:17:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.2,
+      "observed_at": "2026-10-07T21:17:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-07T21:17:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-07T21:17:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 13,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.6,
+      "observed_at": "2026-10-08T07:44:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 6.7,
+      "observed_at": "2026-10-08T07:44:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.7,
+      "observed_at": "2026-10-08T07:44:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "headache",
+      "observed_at": "2026-10-08T07:44:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 6.3,
+      "observed_at": "2026-10-08T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 4.5,
+      "observed_at": "2026-10-08T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 5.2,
+      "observed_at": "2026-10-08T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.7,
+      "observed_at": "2026-10-08T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.6,
+      "observed_at": "2026-10-08T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 3.4,
+      "observed_at": "2026-10-08T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-08T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-08T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 14,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.6,
+      "observed_at": "2026-10-09T07:22:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 7.9,
+      "observed_at": "2026-10-09T07:22:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.4,
+      "observed_at": "2026-10-09T07:22:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-09T07:22:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 6.8,
+      "observed_at": "2026-10-09T21:46:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 4.8,
+      "observed_at": "2026-10-09T21:46:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 7.0,
+      "observed_at": "2026-10-09T21:46:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 4.9,
+      "observed_at": "2026-10-09T21:46:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 5.3,
+      "observed_at": "2026-10-09T21:46:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.6,
+      "observed_at": "2026-10-09T21:46:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-09T21:46:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-09T21:46:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 15,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.0,
+      "observed_at": "2026-10-10T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 6.4,
+      "observed_at": "2026-10-10T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 7.7,
+      "observed_at": "2026-10-10T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-10T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 5.9,
+      "observed_at": "2026-10-10T21:26:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 4.2,
+      "observed_at": "2026-10-10T21:26:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 6.2,
+      "observed_at": "2026-10-10T21:26:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 7.4,
+      "observed_at": "2026-10-10T21:26:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 7.7,
+      "observed_at": "2026-10-10T21:26:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 0.6,
+      "observed_at": "2026-10-10T21:26:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.1,
+      "observed_at": "2026-10-10T21:26:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-10T21:26:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 16,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.6,
+      "observed_at": "2026-10-11T21:23:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 17,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 1.7,
+      "observed_at": "2026-10-11T21:23:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 17,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 9.2,
+      "observed_at": "2026-10-11T21:23:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 17,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 4.8,
+      "observed_at": "2026-10-11T21:23:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 17,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 5.7,
+      "observed_at": "2026-10-11T21:23:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 17,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.4,
+      "observed_at": "2026-10-11T21:23:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 17,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-11T21:23:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 17,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-11T21:23:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 17,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.9,
+      "observed_at": "2026-10-12T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.8,
+      "observed_at": "2026-10-12T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 5.5,
+      "observed_at": "2026-10-12T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "headache",
+      "observed_at": "2026-10-12T07:26:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 6.6,
+      "observed_at": "2026-10-12T21:12:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 3.9,
+      "observed_at": "2026-10-12T21:12:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 7.9,
+      "observed_at": "2026-10-12T21:12:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 6.3,
+      "observed_at": "2026-10-12T21:12:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 8.0,
+      "observed_at": "2026-10-12T21:12:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.6,
+      "observed_at": "2026-10-12T21:12:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-12T21:12:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-12T21:12:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 18,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.6,
+      "observed_at": "2026-10-13T07:18:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.5,
+      "observed_at": "2026-10-13T07:18:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "energy",
+      "value": 6.5,
+      "observed_at": "2026-10-13T07:18:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-13T07:18:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "mood",
+      "value": 7.8,
+      "observed_at": "2026-10-13T21:20:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "stress",
+      "value": 4.0,
+      "observed_at": "2026-10-13T21:20:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "focus",
+      "value": 7.0,
+      "observed_at": "2026-10-13T21:20:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.1,
+      "observed_at": "2026-10-13T21:20:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 7.4,
+      "observed_at": "2026-10-13T21:20:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.7,
+      "observed_at": "2026-10-13T21:20:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-13T21:20:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-13T21:20:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 19,
+      "scenario_phase": "baseline"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 5.5,
+      "observed_at": "2026-10-14T07:39:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 3.8,
+      "observed_at": "2026-10-14T07:39:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 5.8,
+      "observed_at": "2026-10-14T07:39:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-14T07:39:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 5.5,
+      "observed_at": "2026-10-14T21:09:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 5.7,
+      "observed_at": "2026-10-14T21:09:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 4.2,
+      "observed_at": "2026-10-14T21:09:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.9,
+      "observed_at": "2026-10-14T21:09:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.7,
+      "observed_at": "2026-10-14T21:09:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.8,
+      "observed_at": "2026-10-14T21:09:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-14T21:09:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-14T21:09:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 20,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.5,
+      "observed_at": "2026-10-15T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.9,
+      "observed_at": "2026-10-15T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 6.2,
+      "observed_at": "2026-10-15T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "fatigue",
+      "observed_at": "2026-10-15T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 6.0,
+      "observed_at": "2026-10-15T21:32:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 6.8,
+      "observed_at": "2026-10-15T21:32:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 4.0,
+      "observed_at": "2026-10-15T21:32:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.5,
+      "observed_at": "2026-10-15T21:32:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 5.4,
+      "observed_at": "2026-10-15T21:32:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.0,
+      "observed_at": "2026-10-15T21:32:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-15T21:32:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-15T21:32:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 21,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 5.9,
+      "observed_at": "2026-10-16T07:38:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 22,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 3.3,
+      "observed_at": "2026-10-16T07:38:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 22,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 5.4,
+      "observed_at": "2026-10-16T07:38:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 22,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "fatigue",
+      "observed_at": "2026-10-16T07:38:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 22,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 7.1,
+      "observed_at": "2026-10-17T07:40:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 6.4,
+      "observed_at": "2026-10-17T07:40:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 5.1,
+      "observed_at": "2026-10-17T07:40:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "headache",
+      "observed_at": "2026-10-17T07:40:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 7.0,
+      "observed_at": "2026-10-17T21:19:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 3.6,
+      "observed_at": "2026-10-17T21:19:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 5.6,
+      "observed_at": "2026-10-17T21:19:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.2,
+      "observed_at": "2026-10-17T21:19:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 4.0,
+      "observed_at": "2026-10-17T21:19:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.3,
+      "observed_at": "2026-10-17T21:19:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-17T21:19:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-17T21:19:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 23,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.0,
+      "observed_at": "2026-10-18T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.7,
+      "observed_at": "2026-10-18T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 6.4,
+      "observed_at": "2026-10-18T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-18T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 6.3,
+      "observed_at": "2026-10-18T21:22:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 5.9,
+      "observed_at": "2026-10-18T21:22:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 4.8,
+      "observed_at": "2026-10-18T21:22:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.9,
+      "observed_at": "2026-10-18T21:22:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.3,
+      "observed_at": "2026-10-18T21:22:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 1.9,
+      "observed_at": "2026-10-18T21:22:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-18T21:22:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-18T21:22:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 24,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.1,
+      "observed_at": "2026-10-19T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.4,
+      "observed_at": "2026-10-19T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 3.5,
+      "observed_at": "2026-10-19T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "fatigue",
+      "observed_at": "2026-10-19T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 5.6,
+      "observed_at": "2026-10-19T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 7.8,
+      "observed_at": "2026-10-19T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 3.8,
+      "observed_at": "2026-10-19T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 4.8,
+      "observed_at": "2026-10-19T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 5.5,
+      "observed_at": "2026-10-19T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.4,
+      "observed_at": "2026-10-19T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-19T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-19T21:08:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 25,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 5.7,
+      "observed_at": "2026-10-20T07:45:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.5,
+      "observed_at": "2026-10-20T07:45:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 4.2,
+      "observed_at": "2026-10-20T07:45:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "fatigue",
+      "observed_at": "2026-10-20T07:45:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 6.7,
+      "observed_at": "2026-10-20T21:31:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 7.1,
+      "observed_at": "2026-10-20T21:31:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 6.1,
+      "observed_at": "2026-10-20T21:31:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 4.4,
+      "observed_at": "2026-10-20T21:31:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 6.3,
+      "observed_at": "2026-10-20T21:31:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 3.9,
+      "observed_at": "2026-10-20T21:31:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-20T21:31:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-20T21:31:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 26,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.3,
+      "observed_at": "2026-10-21T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 5.7,
+      "observed_at": "2026-10-21T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 5.3,
+      "observed_at": "2026-10-21T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-21T07:12:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 5.4,
+      "observed_at": "2026-10-21T21:41:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 4.8,
+      "observed_at": "2026-10-21T21:41:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 4.0,
+      "observed_at": "2026-10-21T21:41:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 2.5,
+      "observed_at": "2026-10-21T21:41:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 5.8,
+      "observed_at": "2026-10-21T21:41:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.6,
+      "observed_at": "2026-10-21T21:41:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-21T21:41:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-21T21:41:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 27,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 5.9,
+      "observed_at": "2026-10-22T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 4.7,
+      "observed_at": "2026-10-22T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 5.0,
+      "observed_at": "2026-10-22T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "fatigue",
+      "observed_at": "2026-10-22T07:25:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 5.2,
+      "observed_at": "2026-10-22T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 7.4,
+      "observed_at": "2026-10-22T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 5.4,
+      "observed_at": "2026-10-22T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 5.3,
+      "observed_at": "2026-10-22T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 4.3,
+      "observed_at": "2026-10-22T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 2.7,
+      "observed_at": "2026-10-22T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-22T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-22T21:05:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 28,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_duration",
+      "value": 6.5,
+      "observed_at": "2026-10-23T07:28:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "sleep_quality",
+      "value": 4.9,
+      "observed_at": "2026-10-23T07:28:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "energy",
+      "value": 3.9,
+      "observed_at": "2026-10-23T07:28:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "morning_context",
+      "value": "none",
+      "observed_at": "2026-10-23T07:28:00Z",
+      "period": "morning",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "mood",
+      "value": 4.8,
+      "observed_at": "2026-10-23T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "stress",
+      "value": 8.6,
+      "observed_at": "2026-10-23T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "focus",
+      "value": 5.0,
+      "observed_at": "2026-10-23T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "activity_level",
+      "value": 4.3,
+      "observed_at": "2026-10-23T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "diet_quality",
+      "value": 4.0,
+      "observed_at": "2026-10-23T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "caffeine",
+      "value": 3.2,
+      "observed_at": "2026-10-23T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "alcohol",
+      "value": 0.0,
+      "observed_at": "2026-10-23T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    },
+    {
+      "kind": "nicotine",
+      "value": 0.0,
+      "observed_at": "2026-10-23T21:24:00Z",
+      "period": "evening",
+      "source_type": "user-entered",
+      "quality_flag": "self_reported",
+      "day_index": 29,
+      "scenario_phase": "exam"
+    }
+  ],
+  "content_hash": "10f1ad5abca77299b08b63793ad7aa7b3bac997a8921c737fb3d8dc6c478724c"
+}
