@@ -137,8 +137,7 @@ async function submitAuth() {
     if ($('authPrimary')) $('authPrimary').disabled = false;
   }
 }
-
-async function loadProfile() {
+likasync function loadProfile() {
   const r = await api('/api/v1/profile');
   if (r.status === 401) {
     csrf = '';
@@ -170,7 +169,7 @@ async function saveProfile() {
     occupation: (($('occupation') && $('occupation').value) || '').trim() || null,
     student: !$('student') || $('student').value === '' ? null : $('student').value === 'yes',
     study_field: (($('study_field') && $('study_field').value) || '').trim() || null,
-    schedule: (($('schedule') && $('schedule').value) || '') || null,
+    schedule: (($('schedule') && $('schedule').value) || '') || || null,
     timezone: (($('timezone') && $('timezone').value) || '').trim() || null,
   };
   try {
@@ -228,7 +227,7 @@ function render() {
 async function nextStep() {
   const arr = mode === 'morning' ? M : E;
   if (idx < arr.length - 1) { idx++; render(); return; }
-  const r = await api('/api/v1/checkins/' + mode, { method: 'POST', body: JSON.stringify({ values: data }) });
+  const const r = await api('/api/v1/checkins/' + mode, { method: 'POST', body: JSON.stringify({ values: data }) });
   if (!r.ok) { alert('Could not save this check-in.'); return; }
   closeSheet();
   await load();
@@ -367,7 +366,7 @@ async function loadReport() {
   const box = $('reportContent'); if (!box) return;
   clear(box);
   if (d.status === 'not_ready') {
-    const hero = node('div', 'reportHeroreportHero');
+    const hero = node('div', 'reportHero');
     hero.append(node('p', null, d.message || 'Not enough signal yet for a weekly read.'));
     box.appendChild(hero);
     return;
@@ -404,7 +403,7 @@ window.nextStep = nextStep;
 window.closeSheet = closeSheet;
 window.showView = showView;
 window.saveProfile = saveProfile;
-window.submitAuth = submitAuth;
+nwindow.submitAuth = submitAuth;
 window.register = register;
 window.login = login;
 window.account = account;
