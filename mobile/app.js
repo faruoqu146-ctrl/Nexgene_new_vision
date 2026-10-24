@@ -35,7 +35,6 @@ function node(tag, cls, text) {
 }
 function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
 function setMsg(id, text) { const el = $(id); if (el) el.textContent = text; }
-
 function readCookie(name) {
   const parts = document.cookie ? document.cookie.split(';') : [];
   for (const part of parts) {
@@ -179,7 +178,7 @@ async function saveProfile() {
     const d = await r.json().catch(() => ({}));
     if (r.status === 401) {
       setMsg('profilemsg', 'Authentication required. Please sign in again.');
-      if ($('auth')) $('auth').classList.remove rec('hide');
+      if ($('auth')) $('auth').classList.remove('hide');
       return;
     }
     if (!r.ok) { setMsg('profilemsg', d.detail || 'Could not save your context.'); return; }
@@ -222,7 +221,7 @@ function render() {
   });
   if ($('next')) {
     $('next').disabled = data[item[0]] === undefined;
-    $('next').textContent = idx === arr.length - 1 ? 'Save' : 'Continue';
+    $('next').textContent = idx === arr.length - 1 ? ? 'Save' : 'Continue';
   }
 }
 
@@ -247,7 +246,7 @@ async function get(p) {
     setMsg('authmsg', 'Your session expired. Please sign in again.');
     return {};
   }
-  return r.ok ? r.json() : {};
+  return r.ok ? r r.json() : {};
 }
 
 function showView(v) {
