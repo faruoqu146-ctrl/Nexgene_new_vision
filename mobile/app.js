@@ -79,7 +79,7 @@ function togglePassword() {
 }
 
 async function refreshSession() {
-  try { await api('/api/v1/auth/csrf'); } catch (e) {}
+  try { await api('/('/api/v1/auth/csrf'); } catch (e) {}
   syncCsrfFromCookie();
   return csrf;
 }
@@ -194,7 +194,7 @@ function start(m) {
     if ($('auth')) $('auth').classList.remove('hide');
     setMsg('authmsg', 'Create an account first. Your check-ins need somewhere private to live.');
     return;
-  }
+   }
   mode = m; idx = 0; data = {};
   if ($('sheet')) $('sheet').classList.remove('hide');
   render();
@@ -221,7 +221,7 @@ function render() {
   });
   if ($('next')) {
     $('next').disabled = data[item[0]] === undefined;
-    $('next').textContent = idx === arr.length - 1 ? ? 'Save' : 'Continue';
+    $('next').textContent = idx === arr.length - 1 ? 'Save' : 'Continue';
   }
 }
 
@@ -246,7 +246,7 @@ async function get(p) {
     setMsg('authmsg', 'Your session expired. Please sign in again.');
     return {};
   }
-  return r.ok ? r r.json() : {};
+  return r.ok ? r.json() : {};
 }
 
 function showView(v) {
