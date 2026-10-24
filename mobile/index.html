@@ -1,113 +1,20 @@
+<!-- PLACEHOLDER: mobile/index.html
+     Replace this file with your NexGene UI shell (HTML).
+     Served at / via FileResponse and assets under /static/.
+-->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0a0b0f">
-  <meta name="color-scheme" content="dark light">
-  <title>NexGene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NexGene — placeholder</title>
   <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-  <div id="app" class="app">
-    <section id="view-auth" class="view auth-view">
-      <div class="auth-card">
-        <div class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="36" height="36"><path fill="currentColor" d="M6 22c2-8 6-12 10-12s8 4 10 12c-3-4-6-6-10-6s-7 2-10 6z"/><circle cx="16" cy="12" r="2.5" fill="currentColor"/></svg>
-        </div>
-        <h1 class="auth-title">NexGene</h1>
-        <p class="auth-sub">Consent-first lifestyle intelligence. Observe, inspect, do not invent.</p>
-        <div class="seg" role="tablist">
-          <button type="button" class="seg-btn active" data-auth="login" id="tab-login">Sign in</button>
-          <button type="button" class="seg-btn" data-auth="register" id="tab-register">Create account</button>
-        </div>
-        <form id="auth-form" class="stack" autocomplete="on">
-          <label class="field"><span>Email</span><input id="auth-email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
-          <label class="field"><span>Password</span><input id="auth-password" type="password" required minlength="12" autocomplete="current-password" placeholder="At least 12 characters"></label>
-          <p id="auth-error" class="form-error hide" role="alert"></p>
-          <button type="submit" class="btn primary" id="auth-submit">Continue</button>
-        </form>
-        <p class="fine">Server-side authorization and consent remain enforced. No clinical diagnosis.</p>
-      </div>
-    </section>
-    <div id="shell" class="shell hide">
-      <header class="topbar">
-        <div class="topbar-left">
-          <button type="button" class="icon-btn" id="btn-nav" aria-label="Open navigation">☰</button>
-          <div class="topbar-title"><span class="eyebrow" id="page-eyebrow">Overview</span><strong id="page-title">Overview</strong></div>
-        </div>
-        <div class="topbar-right"><span class="pill" id="user-pill" title="Signed-in account">—</span></div>
-      </header>
-      <aside id="sidebar" class="sidebar" aria-label="Primary">
-        <div class="sidebar-brand"><span class="logo-dot"></span><div><b>NexGene</b><small>Intelligence shell</small></div></div>
-        <nav class="side-nav">
-          <button type="button" data-route="overview" class="nav-item active">Overview</button>
-          <button type="button" data-route="checkin" class="nav-item">Check-in</button>
-          <button type="button" data-route="data" class="nav-item">My data</button>
-          <button type="button" data-route="patterns" class="nav-item">Patterns</button>
-          <button type="button" data-route="research" class="nav-item">Research</button>
-          <button type="button" data-route="map" class="nav-item">Architecture</button>
-          <button type="button" data-route="privacy" class="nav-item">Privacy</button>
-          <button type="button" data-route="account" class="nav-item">Account</button>
-        </nav>
-        <div class="sidebar-foot"><span class="status-dot" id="health-dot" title="API health"></span><span class="muted" id="health-label">—</span></div>
-      </aside>
-      <main id="main" class="main" tabindex="-1">
-        <section id="route-overview" class="route">
-          <div class="page-head"><h1>What NexGene can work with right now</h1><p class="lede">Grounded in your authorized lifestyle record. No fabricated scores. Absence of alerts is not a health clearance.</p></div>
-          <div id="founder-banner" class="founder-banner hide" role="status"><div class="raven" aria-hidden="true">🐦‍⬛</div><div><b>Welcome, founder</b><span>Private session · full architecture visible</span></div></div>
-          <div class="grid-2" id="overview-stats"></div>
-          <div class="panel"><div class="panel-head"><h2>Next useful action</h2><span class="tag">Operational</span></div><div id="overview-actions" class="stack gap-sm"></div></div>
-          <div class="panel"><div class="panel-head"><h2>Signals</h2><span class="tag muted">Descriptive</span></div><div id="overview-signals" class="stack gap-sm"></div></div>
-          <div class="panel"><div class="panel-head"><h2>Capability maturity</h2><span class="tag">Honest status</span></div><div id="overview-maturity" class="maturity-list"></div></div>
-        </section>
-        <section id="route-checkin" class="route hide">
-          <div class="page-head"><h1>Check-in</h1><p class="lede">Record observations for a period. Saving confirms backend persistence only — not analysis.</p></div>
-          <div class="seg" id="checkin-period"><button type="button" class="seg-btn active" data-period="morning">Morning</button><button type="button" class="seg-btn" data-period="evening">Evening</button></div>
-          <div id="checkin-form" class="stack"></div>
-          <p id="checkin-status" class="form-msg hide" role="status"></p>
-          <div class="row"><button type="button" class="btn primary" id="checkin-save">Save check-in</button></div>
-        </section>
-        <section id="route-data" class="route hide">
-          <div class="page-head"><h1>My data</h1><p class="lede">Longitudinal record. Event time is when the observation occurred; recorded time is when NexGene stored it.</p></div>
-          <div class="toolbar"><label class="field inline"><span>Kind</span><select id="data-filter-kind"><option value="">All kinds</option></select></label></div>
-          <div id="data-timeline" class="timeline"></div>
-        </section>
-        <section id="route-patterns" class="route hide">
-          <div class="page-head"><h1>Patterns</h1><p class="lede">Descriptive structure in your authorized lifestyle series. Association is not causation.</p></div>
-          <div id="patterns-body" class="stack"></div>
-        </section>
-        <section id="route-research" class="route hide">
-          <div class="page-head"><h1>Research</h1><p class="lede">Reports and engine status from implemented endpoints only.</p></div>
-          <div class="panel"><div class="panel-head"><h2>Weekly report</h2><span class="tag">Available</span></div><div id="research-weekly"></div></div>
-          <div class="panel"><div class="panel-head"><h2>Intelligence engine</h2><span class="tag muted">If configured</span></div><div id="research-engine"></div></div>
-          <div class="panel"><div class="panel-head"><h2>How outputs are framed</h2></div><div class="howto"><p>Every substantive finding should separate <b>observed</b>, <b>calculated</b>, <b>exploratory</b>, and <b>insufficient evidence</b>.</p></div></div>
-        </section>
-        <section id="route-map" class="route hide">
-          <div class="page-head"><h1>Intelligence architecture</h1><p class="lede">Conceptual product layers. Status reflects what this deployment exposes.</p></div>
-          <div id="arch-map" class="arch-map" role="list"></div>
-          <div id="arch-detail" class="panel arch-detail"></div>
-        </section>
-        <section id="route-privacy" class="route hide">
-          <div class="page-head"><h1>Privacy & permissions</h1><p class="lede">Authorization is a prerequisite for processing, not a badge.</p></div>
-          <div id="privacy-body" class="stack"></div>
-        </section>
-        <section id="route-account" class="route hide">
-          <div class="page-head"><h1>Account</h1><p class="lede">Session and profile context.</p></div>
-          <div id="account-body" class="stack"></div>
-          <button type="button" class="btn danger" id="btn-logout">Sign out</button>
-        </section>
-      </main>
-      <nav class="bottom-nav" aria-label="Mobile">
-        <button type="button" data-route="overview" class="bnav active">Home</button>
-        <button type="button" data-route="checkin" class="bnav">Check-in</button>
-        <button type="button" data-route="data" class="bnav">Data</button>
-        <button type="button" data-route="patterns" class="bnav">Patterns</button>
-        <button type="button" data-route="map" class="bnav">Map</button>
-      </nav>
-    </div>
-  </div>
-  <div id="toast" class="toast hide" role="status"></div>
+  <main style="font-family: system-ui, sans-serif; max-width: 32rem; margin: 4rem auto; padding: 1.5rem;">
+    <h1>NexGene</h1>
+    <p>UI placeholder. Replace <code>mobile/index.html</code>, <code>mobile/styles.css</code>, and <code>mobile/app.js</code> with your build, then redeploy.</p>
+  </main>
   <script src="/static/app.js"></script>
 </body>
 </html>
