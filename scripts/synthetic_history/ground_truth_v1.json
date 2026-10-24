@@ -1,0 +1,37 @@
+{
+  "dataset_id": "nexgene-syn-student-30d",
+  "dataset_version": "1.0.0",
+  "synthetic": true,
+  "planted_patterns": [
+    {
+      "id": "GT-001",
+      "name": "exam_period_elevated_stress",
+      "window": "last_10_days",
+      "direction": "stress higher in exam phase than baseline",
+      "variables": ["stress"]
+    },
+    {
+      "id": "GT-002",
+      "name": "exam_period_reduced_sleep",
+      "window": "last_10_days",
+      "direction": "sleep_duration lower in exam phase than baseline",
+      "variables": ["sleep_duration"]
+    },
+    {
+      "id": "GT-003",
+      "name": "sleep_energy_coupling",
+      "window": "full_30_days",
+      "direction": "shorter sleep co-occurs with lower energy (noisy)",
+      "variables": ["sleep_duration", "energy"]
+    }
+  ],
+  "negative_controls": [
+    {"id": "GT-NC-001", "name": "nicotine_no_signal", "variables": ["nicotine"]},
+    {"id": "GT-NC-002", "name": "alcohol_sparse_no_causal_claim", "variables": ["alcohol"]}
+  ],
+  "limitations": [
+    "Synthetic data only; not real participant observations.",
+    "Patterns are designed, not discovered from nature.",
+    "Does not validate clinical or predictive performance."
+  ]
+}
