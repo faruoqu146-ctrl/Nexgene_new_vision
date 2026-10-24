@@ -7,6 +7,7 @@ _parts = sorted(_dir.glob("payload_*.txt"))
 if not _parts:
     raise RuntimeError("NexGene payload chunks missing (payload_*.txt)")
 _b64 = "".join(p.read_text() for p in _parts)
+_b64 = "".join(_b64.split())  # tolerate newlines/whitespace in chunks
 _CODE = zlib.decompress(base64.b64decode(_b64)).decode("utf-8")
 _mod = types.ModuleType(__name__)
 _mod.__file__ = __file__
