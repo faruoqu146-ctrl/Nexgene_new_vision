@@ -24,7 +24,7 @@ const E = [
   ['diet_quality', 'How did you eat?', 'Think balance, not calories.', [['\u00b7', 'Chaotic', 2], ['\u25d1', 'Mostly quick', 4], ['\u25d1', 'Mixed', 6], ['\u25d5', 'Mostly balanced', 8], ['\u2726', 'Very balanced', 10]]],
   ['caffeine', 'Caffeine today?', 'Coffee, tea and energy drinks count.', [['\u25cb', 'None', 0], ['\u25d1', '1', 1], ['\u25d1', '2', 2], ['\u25d5', '3+', 3]]],
   ['alcohol', 'Alcohol today?', 'Optional, no judgement.', [['\u25cb', 'None', 0], ['\u25d1', '1', 1], ['\u25d1', '2', 2], ['\u25d5', '3+', 3]]],
-  ['nicotine',', 'Nicotine / smoking?', 'Optional context for your baseline.', [['\u25cb', 'None', 0], ['\u25d1', 'Some', 2], ['\u25d5', 'Frequent', 5]]]
+  ['nicotine', 'Nicotine / smoking?', 'Optional context for your baseline.', [['\u25cb', 'None', 0], ['\u25d1', 'Some', 2], ['\u25d5', 'Frequent', 5]]]
 ];
 
 function node(tag, cls, text) {
@@ -119,7 +119,7 @@ async function finishAuth(emailHint) {
 async function submitAuth() {
   const email = ($('email') && $('email').value || '').trim().toLowerCase();
   const password = ($('password') && $('password').value) || '';
-  if (!email || password.length < 12 || !/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9].test(password) || !/[^A-Za-z0-9]/.test(password)) {
+  if (!email || password.length < 12 || !/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password) || !/[^A-Za-z0-9]/.test(password)) {
     setMsg('authmsg', 'Use a valid email and a 12+ character password with upper, lower, number and symbol.');
     return;
   }
@@ -178,7 +178,7 @@ async function saveProfile() {
     const d = await r.json().catch(() => ({}));
     if (r.status === 401) {
       setMsg('profilemsg', 'Authentication required. Please sign in again.');
-      if ($('auth')) $('auth').classList.remove('('hide');
+      if ($('auth')) $('auth').classList.remove('hide');
       return;
     }
     if (!r.ok) { setMsg('profilemsg', d.detail || 'Could not save your context.'); return; }
@@ -202,7 +202,7 @@ function start(m) {
 
 function render() {
   const arr = mode === 'morning' ? M : E;
-  const  const item = arr[idx];
+  const item = arr[idx];
   if ($('step')) $('step').textContent = (idx + 1) + ' / ' + arr.length;
   const q = $('q'); if (!q) return;
   clear(q);
@@ -257,7 +257,7 @@ function showView(v) {
     if (n) n.classList.toggle('active', x === v);
   });
   if (v === 'patterns') loadPatterns();
-  if (v === 'timeline') loadloadTimeline();
+  if (v === 'timeline') loadTimeline();
   if (v === 'report') loadReport();
 }
 
@@ -367,7 +367,7 @@ async function loadReport() {
   const box = $('reportContent'); if (!box) return;
   clear(box);
   if (d.status === 'not_ready') {
-    const hero = node('div', 'reportHero');
+    const hero = node('div', 'reportHeroreportHero');
     hero.append(node('p', null, d.message || 'Not enough signal yet for a weekly read.'));
     box.appendChild(hero);
     return;
