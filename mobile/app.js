@@ -42,7 +42,7 @@ async function api(path, options = {}) {
   const opts = { credentials: 'include', ...options, headers: { ...(options.headers || {}) } };
   if (opts.body && !opts.headers['Content-Type']) opts.headers['Content-Type'] = 'application/json';
   if (opts.method && opts.method !== 'GET' && opts.method !== 'HEAD') {
-    if (!csrf) syncCsrfFromCookie();
+    syncCsrfFromCookie();
     if (csrf) opts.headers['X-CSRF-Token'] = csrf;
   }
   return fetch(API + path, opts);
@@ -191,8 +191,9 @@ async function saveProfile() {
   }
 }
 
-function start(m) {
-  if (!csrf) {
+async function start(m) {
+  const me = await ensureAuthed();
+  if (!me || !me.id) {
     if ($('auth')) $('auth').classList.remove('hide');
     setMsg('authmsg', 'Create an account first. Your check-ins need somewhere private to live.');
     return;
@@ -230,10 +231,32 @@ function render() {
 async function nextStep() {
   const arr = mode === 'morning' ? M : E;
   if (idx < arr.length - 1) { idx++; render(); return; }
-  const r = await api('/api/v1/checkins/' + mode, { method: 'POST', body: JSON.stringify({ values: data }) });
-  if (!r.ok) { alert('Could not save this check-in.'); return; }
+  const me = await ensureAuthed();
+  if (!me || !me.id) {
+    alert('Please sign in again to save this check-in.');
+    if ($('auth')) $('auth').classList.remove('hide');
+    return;
+  }
+  let r;
+  try {
+    r = await api('/api/v1/checkins/' + mode, { method: 'POST', body: JSON.stringify({ values: data }) });
+  } catch (e) {
+    alert('Network error while saving check-in. Please try again.');
+    return;
+  }
+  if (!r.ok) {
+    const d = await r.json().catch(() => ({}));
+    let msg = d.detail || d.message || ('Could not save (HTTP ' + r.status + ')');
+    if (Array.isArray(msg)) msg = msg.map(x => x.msg || JSON.stringify(x)).join('; ');
+    alert(typeof msg === 'string' ? msg : JSON.stringify(msg));
+    if (r.status === 401 || r.status === 403) {
+      csrf = '';
+      if ($('auth')) $('auth').classList.remove('hide');
+    }
+    return;
+  }
   closeSheet();
-  await load();
+  try { await load(); } catch (e) {}
 }
 
 function closeSheet() { if ($('sheet')) $('sheet').classList.add('hide'); }
