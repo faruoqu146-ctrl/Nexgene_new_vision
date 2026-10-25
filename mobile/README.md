@@ -1,13 +1,11 @@
-# mobile/ — owner update zone
-
-These files are **placeholders**. Replace them with your UI build:
+# mobile/ — NexGene UI shell v2
 
 | File | Role |
 |------|------|
 | `index.html` | App shell (served at `/`) |
 | `styles.css` | Design system (`/static/styles.css`) |
-| `app.js` | Client logic (`/static/app.js`) |
+| `app.js` | Loader → `app.core.js` |
+| `app.core.js` | Client application |
+| `fx.js` | Presentation effects only |
 
-Optional: additional assets in this folder are also served under `/static/`.
-
-After replacing, commit, push, and Manual Deploy on Render.
+After deploy, hard-refresh the site.
