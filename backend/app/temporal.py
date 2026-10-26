@@ -102,11 +102,16 @@ def local_day(dt_utc: datetime, tz) -> date:
 @dataclass(frozen=True)
 class ReportingWindow:
     tz_name: str
-    tz_fell_back: bool
+    tz_fallback: bool  # True when timezone fell back to UTC (weekly.py reads this name)
     week_start: date
     week_end: date
     baseline_start: date
     baseline_end: date
+
+    @property
+    def tz_fell_back(self) -> bool:
+        """Alias for older callers."""
+        return self.tz_fallback
 
 
 def weekly_window(now: datetime, tz_name: Optional[str] = "UTC", *, week_days: int = 7, baseline_days: int = 21) -> ReportingWindow:
