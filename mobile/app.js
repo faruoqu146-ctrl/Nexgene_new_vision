@@ -1,14 +1,8 @@
-(function () {
-  var s = document.createElement("script");
-  s.src = "/static/app.core.js";
-  s.async = false;
-  s.onerror = function () {
-    console.error("NexGene: failed to load /static/app.core.js");
-    var el = document.getElementById("auth-error");
-    if (el) {
-      el.classList.remove("hide");
-      el.textContent = "UI client failed to load. Hard-refresh or redeploy mobile/app.core.js.";
-    }
-  };
-  document.head.appendChild(s);
-})();
+/* PLACEHOLDER: mobile/app.js
+ *
+ * Replace this entire file with COMMIT_app.js (classic client + api-state),
+ * then commit and Manual Deploy.
+ *
+ * Do not deploy with this placeholder in place.
+ */
+console.error("NexGene: mobile/app.js is a placeholder. Paste COMMIT_app.js and redeploy.");
