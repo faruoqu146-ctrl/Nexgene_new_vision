@@ -1,9 +1,95 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#06070b"><title>NexGene</title><link rel="stylesheet" href="/static/styles.css"></head><body><div class="app"><header class="topbar"><div class="logo"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20c0-6 3-10 8-12 1-3 3-5 6-5l4 3-3 1c0 3-2 5-5 6 2 2 3 4 3 7-2-2-4-3-6-3-2 2-4 3-7 3z"/></svg></span><div><b>NEXGENE</b><small>the quiet intelligence of you</small></div></div><div class="top-actions"><button class="icon-btn notification" aria-label="Signals"><span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></button><button id="account" class="profile-btn" onclick="account()" aria-label="Account"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20c.7-3.7 2.8-5.5 6.5-5.5s5.8 1.8 6.5 5.5"/></svg></button></div></header><main><section id="auth" class="auth hide"><div class="authshell"><div class="authmark"><svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20c0-6 3-10 8-12 1-3 3-5 6-5l4 3-3 1c0 3-2 5-5 6 2 2 3 4 3 7-2-2-4-3-6-3-2 2-4 3-7 3z"/></svg></div><div class="eyebrow">Private by default</div><div class="authtabs"><button id="tabLogin" class="active" onclick="setAuthMode('login')">Sign in</button><button id="tabRegister" onclick="setAuthMode('register')">Create account</button></div><h1 id="authTitle">Welcome back.</h1><p id="authLead">Your baseline is waiting where you left it.</p><label class="field"><span>Email</span><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></label><label class="field"><span>Password</span><div class="passwordField"><input id="password" type="password" autocomplete="current-password" placeholder="Your password"><button type="button" onclick="togglePassword()" aria-label="Show password">Show</button></div></label><div id="passwordRules" class="passwordRules hide"><span>12+ characters</span><span>Upper + lower case</span><span>Number + symbol</span></div><button id="authPrimary" class="authPrimary" onclick="submitAuth()">Sign in</button><div class="authDivider"><span>OR</span></div><div id="googleButton" class="googleButton"></div><small id="googleNote" class="authnote"></small><small id="authmsg" class="authmsg"></small><p class="authfine">Your data stays private. NexGene does not sell personal health data.</p></div></section>
-<section id="onboarding" class="auth hide"><div class="authshell"><div class="eyebrow">A little context</div><h1>Help NexGene understand your world.</h1><p>Optional. Improves the human read of your reports.</p><label class="field"><span>Age range</span><input id="age_range" placeholder="e.g. 25-34"></label><label class="field"><span>Country</span><input id="country" placeholder="e.g. Nigeria"></label><label class="field"><span>Occupation</span><input id="occupation" placeholder="e.g. Student, designer"></label><label class="field"><span>Student?</span><select id="student"><option value="">Prefer not to say</option><option value="yes">Yes</option><option value="no">No</option></select></label><label class="field"><span>Field of study</span><input id="study_field" placeholder="Optional"></label><label class="field"><span>Schedule</span><input id="schedule" placeholder="e.g. shift work"></label><label class="field"><span>Timezone</span><input id="timezone" placeholder="e.g. Africa/Lagos"></label><button class="authPrimary" onclick="saveProfile()">Save context</button><small id="profilemsg" class="authmsg"></small></div></section>
-<section id="todayView" class="view"><div class="viewhead"><div class="eyebrow" id="date"></div><h1 id="greeting">Hello.</h1><p>Two small check-ins. One quiet picture of your day.</p></div><div class="progress"><div id="bar"></div></div><div class="meta"><span id="count">0 / 2 check-ins</span></div>
-<section id="snapshot" class="grid"><div class="empty"><b>A quiet page.</b><span>Two tiny check-ins begin the picture.</span></div></section><div class="actions"><button class="action" onclick="start('morning')"><strong>☼</strong><div><b>Morning</b><span>Sleep · energy · context</span></div>→</button><button class="action night" onclick="start('evening')"><strong>◐</strong><div><b>Evening</b><span>Mood · stress · focus · lifestyle</span></div>→</button></div><h2>Signals <small>new</small></h2><section id="signals" class="signals"><div class="signal"><b>Something will appear here.</b><span>Keep a little signal coming and NexGene will give you something back.</span></div></section><h2>What we're noticing <small>early</small></h2><div class="insight" id="insight">Your baseline is beginning to take shape.</div></section>
-<section id="patternsView" class="view hide"><div class="viewhead"><div class="eyebrow">Last 30 days</div><h1>Your patterns.</h1><p>Not predictions. Just the shape of your days so far.</p></div><div id="patternCards" class="patternCards"></div><div class="chartbox"><div class="charttitle"><b>Sleep & focus</b><small>recent daily averages</small></div><div id="chart"></div></div></section>
-<section id="reportView" class="view hide"><div class="viewhead"><div class="eyebrow">This week</div><h1>A week with NexGene.</h1><p>Serious data underneath. A human read on top.</p></div><div id="reportContent"></div></section>
-<section id="timelineView" class="view hide"><div class="viewhead"><div class="eyebrow">Your record</div><h1>The living timeline.</h1><p>Every check-in becomes part of your personal history.</p></div><div id="timeline" class="timeline"></div></section></main>
-<nav><button id="nToday" class="active" onclick="showView('today')">Today</button><button id="nPatterns" onclick="showView('patterns')">Patterns</button><button id="nReport" onclick="showView('report')">Report</button><button id="nTimeline" onclick="showView('timeline')">Timeline</button></nav>
-<div id="sheet" class="sheet hide"><div class="panel"><div class="sheettop"><button onclick="closeSheet()">×</button><span id="step"></span></div><div id="q"></div><div id="choices"></div><button id="next" disabled onclick="nextStep()">Continue</button></div></div></div><script src="/static/app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0d1a1e">
+  <meta name="color-scheme" content="dark light">
+  <title>NexGene</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Hanken+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-overview" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></symbol><symbol id="i-checkin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></symbol><symbol id="i-data" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></symbol><symbol id="i-patterns" viewBox="0 0 24 24"><path d="M3 14c2.5 0 2.5-8 5-8s2.5 12 5 12 2.5-8 5-8 1.5 2 3 2"/></symbol><symbol id="i-research" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></symbol><symbol id="i-map" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></symbol><symbol id="i-privacy" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/></symbol><symbol id="i-account" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1-4 4-5.5 7-5.5s6 1.5 7 5.5"/></symbol></svg>
+  <div id="app" class="app">
+    <section id="view-auth" class="view auth-view">
+      <div class="auth-hero">
+        <canvas id="helix" aria-hidden="true"></canvas>
+        <div class="hero-copy">
+          <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" width="40" height="40"><path d="M10 3C10 14 22 18 22 29" stroke="var(--a)"/><path d="M22 3C22 14 10 18 10 29" stroke="var(--text2)"/></svg></div>
+          <h2>Your record, read honestly.</h2>
+          <p>Log sleep, energy and mood. NexGene shows the patterns that are really there, and says plainly when there aren't any.</p>
+        </div>
+      </div>
+      <div class="auth-card">
+        <h1 class="auth-title">Welcome to NexGene</h1>
+        <p class="auth-sub">Consent-first lifestyle intelligence.</p>
+        <div class="tabs">
+          <button type="button" class="tab active" id="tab-login">Sign in</button>
+          <button type="button" class="tab" id="tab-register">Create account</button>
+        </div>
+        <form id="auth-form" class="stack" autocomplete="on">
+          <label class="field"><span>Email</span>
+            <input id="auth-email" type="email" required autocomplete="email" placeholder="you@example.com">
+          </label>
+          <label class="field"><span>Password</span>
+            <div class="pw-wrap"><input id="auth-password" type="password" required minlength="12" autocomplete="current-password" placeholder="At least 12 characters"><button type="button" class="pw-toggle" id="pw-toggle" aria-label="Show password">Show</button></div>
+          </label>
+          <p id="auth-error" class="form-error hide" role="alert"></p>
+          <button type="submit" class="btn primary" id="auth-submit">Continue</button>
+        </form>
+        <p class="fine-print">Private by default. Your data stays yours.</p>
+      </div>
+    </section>
+
+    <div id="shell" class="shell hide">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="brand-mark sm" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M10 3C10 14 22 18 22 29" stroke="var(--a)"/><path d="M22 3C22 14 10 18 10 29" stroke="var(--text2)"/></svg></div>
+          <div class="topbar-title"><strong>NexGene</strong><span class="eyebrow">Lifestyle intelligence</span></div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="icon-btn" id="btn-bell" aria-label="Signals">🔔</button>
+          <button type="button" class="btn ghost" id="btn-signout">Sign out</button>
+        </div>
+      </header>
+
+      <aside class="sidebar" aria-label="Primary">
+        <nav class="side-nav">
+          <button type="button" data-route="overview" class="snav active"><svg class="ic" aria-hidden="true"><use href="#i-overview"/></svg><span>Overview</span></button>
+          <button type="button" data-route="checkin" class="snav"><svg class="ic" aria-hidden="true"><use href="#i-checkin"/></svg><span>Check-in</span></button>
+          <button type="button" data-route="data" class="snav"><svg class="ic" aria-hidden="true"><use href="#i-data"/></svg><span>Data</span></button>
+          <button type="button" data-route="patterns" class="snav"><svg class="ic" aria-hidden="true"><use href="#i-patterns"/></svg><span>Patterns</span></button>
+          <button type="button" data-route="research" class="snav"><svg class="ic" aria-hidden="true"><use href="#i-research"/></svg><span>Research</span></button>
+          <button type="button" data-route="map" class="snav"><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg><span>Architecture</span></button>
+          <button type="button" data-route="privacy" class="snav"><svg class="ic" aria-hidden="true"><use href="#i-privacy"/></svg><span>Privacy</span></button>
+          <button type="button" data-route="account" class="snav"><svg class="ic" aria-hidden="true"><use href="#i-account"/></svg><span>Account</span></button>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <section id="route-overview" class="route"></section>
+        <section id="route-checkin" class="route hide"></section>
+        <section id="route-data" class="route hide"></section>
+        <section id="route-patterns" class="route hide"></section>
+        <section id="route-research" class="route hide"></section>
+        <section id="route-map" class="route hide"></section>
+        <section id="route-privacy" class="route hide"></section>
+        <section id="route-account" class="route hide"></section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="Mobile">
+        <button type="button" data-route="overview" class="bnav active"><svg class="ic" aria-hidden="true"><use href="#i-overview"/></svg><span>Home</span></button>
+        <button type="button" data-route="checkin" class="bnav"><svg class="ic" aria-hidden="true"><use href="#i-checkin"/></svg><span>Check-in</span></button>
+        <button type="button" data-route="data" class="bnav"><svg class="ic" aria-hidden="true"><use href="#i-data"/></svg><span>Data</span></button>
+        <button type="button" data-route="patterns" class="bnav"><svg class="ic" aria-hidden="true"><use href="#i-patterns"/></svg><span>Patterns</span></button>
+        <button type="button" data-route="map" class="bnav"><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg><span>Map</span></button>
+      </nav>
+    </div>
+  </div>
+  <div id="toast" class="toast hide" role="status"></div>
+  <script src="/static/app.js"></script>
+  <script src="/static/fx.js" defer></script>
+</body>
+</html>
