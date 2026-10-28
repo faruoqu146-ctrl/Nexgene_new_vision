@@ -6,9 +6,7 @@ COPY backend /app/backend
 COPY mobile /app/mobile
 COPY scripts /app/scripts
 WORKDIR /app
-# Ensure backend.app.research resolves as both package import and script fallback (import research)
 ENV PYTHONPATH=/app:/app/backend/app
-# Readiness (not mere liveness): 503 until the database is reachable and the required schema is present.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
   CMD python -c "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/v1/ready', timeout=4).status == 200 else 1)"
 CMD ["uvicorn","backend.app.main:app","--host","0.0.0.0","--port","8000"]
