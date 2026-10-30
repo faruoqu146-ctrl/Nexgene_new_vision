@@ -1,1 +1,5 @@
-PLACEHOLDER — paste from research_surface zip backend/app/research/validate.py
+"""Validation helpers (boot-safe stub)."""
+from __future__ import annotations
+
+def validate(*args, **kwargs):
+    return {"status": "stub"}

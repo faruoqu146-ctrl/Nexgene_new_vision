@@ -1,1 +1,5 @@
-PLACEHOLDER — paste from research_surface zip backend/app/research/special.py
+"""Special analyses (boot-safe stub)."""
+from __future__ import annotations
+
+def run(*args, **kwargs):
+    return {"status": "stub"}

@@ -1,11 +1,8 @@
-"""Multiple-testing corrections used by the discovery pipeline."""
+"""Multiple-testing corrections (boot-safe)."""
 from __future__ import annotations
-
-from typing import Iterable, List, Sequence
-
+from typing import List, Sequence
 
 def holm(p_values: Sequence[float]) -> List[float]:
-    """Holm–Bonferroni adjusted p-values (same order as input)."""
     n = len(p_values)
     if n == 0:
         return []
@@ -13,15 +10,11 @@ def holm(p_values: Sequence[float]) -> List[float]:
     adj = [0.0] * n
     running = 0.0
     for rank, i in enumerate(order):
-        factor = n - rank
-        val = min(1.0, p_values[i] * factor)
-        running = max(running, val)
+        running = max(running, min(1.0, p_values[i] * (n - rank)))
         adj[i] = running
     return adj
 
-
 def benjamini_hochberg(p_values: Sequence[float], q: float = 0.10) -> List[bool]:
-    """BH rejection decisions at FDR level q."""
     n = len(p_values)
     if n == 0:
         return []
@@ -32,6 +25,5 @@ def benjamini_hochberg(p_values: Sequence[float], q: float = 0.10) -> List[bool]
         if p_values[i] <= (rank / n) * q:
             max_k = rank
     for rank, i in enumerate(order, start=1):
-        if rank <= max_k:
-            reject[i] = True
+        reject[i] = rank <= max_k
     return reject

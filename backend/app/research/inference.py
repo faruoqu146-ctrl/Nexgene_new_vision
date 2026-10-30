@@ -1,1 +1,5 @@
-PLACEHOLDER — paste from research_surface zip backend/app/research/inference.py
+"""Inference helpers (boot-safe stub)."""
+from __future__ import annotations
+
+def infer(*args, **kwargs):
+    return {"status": "stub"}
