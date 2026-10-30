@@ -1,29 +1,50 @@
-"""Multiple-testing corrections (boot-safe)."""
+"""Multiple-testing control for the hypothesis family."""
 from __future__ import annotations
-from typing import List, Sequence
 
-def holm(p_values: Sequence[float]) -> List[float]:
-    n = len(p_values)
-    if n == 0:
-        return []
-    order = sorted(range(n), key=lambda i: p_values[i])
-    adj = [0.0] * n
-    running = 0.0
-    for rank, i in enumerate(order):
-        running = max(running, min(1.0, p_values[i] * (n - rank)))
-        adj[i] = running
-    return adj
+from typing import Sequence
 
-def benjamini_hochberg(p_values: Sequence[float], q: float = 0.10) -> List[bool]:
-    n = len(p_values)
-    if n == 0:
-        return []
-    order = sorted(range(n), key=lambda i: p_values[i])
-    reject = [False] * n
-    max_k = -1
-    for rank, i in enumerate(order, start=1):
-        if p_values[i] <= (rank / n) * q:
-            max_k = rank
-    for rank, i in enumerate(order, start=1):
-        reject[i] = rank <= max_k
-    return reject
+import numpy as np
+
+
+def bh_adjust(p: Sequence[float]) -> np.ndarray:
+    """Benjamini-Hochberg adjusted p-values (q-values), monotone and capped at 1."""
+    p = np.asarray(p, dtype=float)
+    m = len(p)
+    if m == 0:
+        return p
+    order = np.argsort(p, kind="mergesort")
+    ranked = p[order] * m / (np.arange(m) + 1.0)
+    q_sorted = np.minimum.accumulate(ranked[::-1])[::-1]
+    q = np.empty(m)
+    q[order] = np.minimum(1.0, q_sorted)
+    return q
+
+
+def by_adjust(p: Sequence[float]) -> np.ndarray:
+    """Benjamini-Yekutieli: FDR control under arbitrary dependence (conservative)."""
+    m = len(p)
+    if m == 0:
+        return np.asarray(p, dtype=float)
+    c = float(np.sum(1.0 / np.arange(1, m + 1)))
+    return np.minimum(1.0, bh_adjust(p) * c)
+
+
+def holm_adjust(p: Sequence[float]) -> np.ndarray:
+    """Holm step-down adjusted p-values (family-wise error control)."""
+    p = np.asarray(p, dtype=float)
+    m = len(p)
+    if m == 0:
+        return p
+    order = np.argsort(p, kind="mergesort")
+    adj = np.maximum.accumulate((m - np.arange(m)) * p[order])
+    out = np.empty(m)
+    out[order] = np.minimum(1.0, adj)
+    return out
+
+
+def storey_pi0(p: Sequence[float], lam: float = 0.5) -> float:
+    """Storey's estimate of the proportion of true nulls (reported, never used for gating)."""
+    p = np.asarray(p, dtype=float)
+    if len(p) < 20:
+        return 1.0
+    return float(min(1.0, max(0.05, np.mean(p > lam) / (1.0 - lam))))
