@@ -69,11 +69,7 @@ def validate_event_time(value: Optional[datetime], *, now: datetime) -> datetime
 
 
 def event_time_of(record) -> tuple[Optional[datetime], str]:
-    """Return ``(event_utc, basis)`` for a stored observation-like row.
-
-    basis is ``observed_at``, ``recorded_at_legacy``, or ``missing``.
-    Never invents a timestamp.
-    """
+    """Return ``(event_time_utc, basis)`` for a row; ``(None, 'missing')`` if unknowable."""
     observed = getattr(record, "observed_at", None)
     if observed is not None:
         return as_utc(observed), BASIS_OBSERVED
@@ -85,32 +81,33 @@ def event_time_of(record) -> tuple[Optional[datetime], str]:
 
 def resolve_tz(name: Optional[str]):
     """Resolve an IANA timezone name. Returns ``(tzinfo, fell_back_to_utc)``."""
-    if not name or not str(name).strip():
-        return timezone.utc, True
+    if not name or name.upper() == "UTC":
+        return timezone.utc, False
     try:
         from zoneinfo import ZoneInfo
-        return ZoneInfo(str(name).strip()), False
+        return ZoneInfo(name), False
     except Exception:
         return timezone.utc, True
 
 
 def local_day(dt_utc: datetime, tz) -> date:
-    """Calendar day of an aware UTC instant in the given timezone."""
     return as_utc(dt_utc).astimezone(tz).date()
 
 
 @dataclass(frozen=True)
 class ReportingWindow:
+    """Calendar-day windows in the user's timezone (all bounds inclusive).
+
+    week      the last ``week_days`` local days, ending today.
+    baseline  the ``baseline_days`` local days immediately BEFORE the week. The baseline
+              deliberately excludes the week it is compared against.
+    """
     tz_name: str
     tz_fallback: bool
     week_start: date
     week_end: date
     baseline_start: date
     baseline_end: date
-
-    @property
-    def tz_fell_back(self) -> bool:
-        return self.tz_fallback
 
 
 def weekly_window(now: datetime, tz_name: Optional[str] = "UTC", *, week_days: int = 7, baseline_days: int = 21) -> ReportingWindow:
