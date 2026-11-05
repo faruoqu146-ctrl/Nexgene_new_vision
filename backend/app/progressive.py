@@ -36,7 +36,12 @@ try:
     from .checkin import EVENING_CORE, EVENING_OPTIONAL, MORNING_CORE, MORNING_OPTIONAL, SKIPPED
     from .research.config import BEHAVIOR_EXPOSURES, DEFAULT_CONFIG, SCALE_0_10, STATE_OUTCOMES
     from .temporal import ReportingWindow, as_utc, bucket_observations, local_day, resolve_tz, weekly_window
-except ImportError:  # pragma: no cover - executed as a script from backend/app
+except ImportError:  # pragma: no cover - script / container without package context
+    import sys
+    from pathlib import Path as _Path
+    _app_dir = str(_Path(__file__).resolve().parent)
+    if _app_dir not in sys.path:
+        sys.path.insert(0, _app_dir)
     import weekly as W
     from checkin import EVENING_CORE, EVENING_OPTIONAL, MORNING_CORE, MORNING_OPTIONAL, SKIPPED
     from research.config import BEHAVIOR_EXPOSURES, DEFAULT_CONFIG, SCALE_0_10, STATE_OUTCOMES
