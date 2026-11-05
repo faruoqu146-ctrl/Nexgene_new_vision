@@ -50,9 +50,15 @@ MORNING_CORE = ("sleep_duration", "sleep_quality", "energy")
 MORNING_OPTIONAL = ("morning_context",)
 EVENING_CORE = ("mood", "stress", "focus")
 EVENING_OPTIONAL = ("activity_level", "diet_quality", "caffeine", "alcohol", "nicotine")
+PERIOD_KINDS = {
+    "morning": MORNING_CORE + MORNING_OPTIONAL,
+    "evening": EVENING_CORE + EVENING_OPTIONAL,
+}
 
 
 class CheckinValueError(ValueError):
+    """A submitted value violates the check-in contract. ``kind`` names the offending question."""
+
     def __init__(self, message: str, kind: str | None = None):
         super().__init__(message)
         self.kind = kind
